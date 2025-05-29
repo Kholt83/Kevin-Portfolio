@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Holt | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -77,6 +77,7 @@
       background: rgba(0, 0, 0, 0.7);
       margin-top: 2rem;
       border-radius: 10px;
+      position: relative; /* for positioning child absolute elements */
     }
 
     section h2 {
@@ -180,6 +181,30 @@
         filter: drop-shadow(0 0 8px #0ff);
       }
     }
+
+    /* New About Me button styling */
+    .about-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: auto;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff;
+      background: #000;
+      border: none;
+      border-radius: 10px;
+      color: #0ff;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .about-btn:hover {
+      box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -204,6 +229,8 @@
       I'm Kevin Holt, a seasoned maintenance and manufacturing leader turned cloud and tech explorer.
       From SCADA systems and CNC optimization to Lean Six Sigma wins, I blend hands-on expertise with a drive for digital evolution.
     </p>
+
+    <button class="about-btn" onclick="window.open('about-more.html', '_blank')">Learn More</button>
   </section>
 
   <section id="projects">
@@ -221,6 +248,7 @@
       <button class="cert-badge" onclick="window.open('5sxrkrhr_1748146015166.pdf', '_blank')">
         <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/144472399" alt="Lean Six Sigma Green Belt Badge" />
         <span>SSGI Lean Six Sigma Green Belt</span>
+        <span style="color:#ff0; font-size:0.85rem; margin-top: 4px; display: block;">🌟 Naomi’s Pick</span>
       </button>
 
       <button class="cert-badge" onclick="window.open('Generative_AI_Overview_for_Project_Managers.pdf', '_blank')">

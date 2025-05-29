@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Holt | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -29,7 +28,7 @@
     header {
       background: #000;
       color: #0ff;
-      padding: 2rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
@@ -55,7 +54,7 @@
     }
 
     nav ul li {
-      display: inline;
+      display: inline-block;
       margin: 0 15px;
     }
 
@@ -73,11 +72,10 @@
     section {
       padding: 2rem;
       max-width: 800px;
-      margin: auto;
+      margin: 2rem auto;
       background: rgba(0, 0, 0, 0.7);
-      margin-top: 2rem;
       border-radius: 10px;
-      position: relative; /* for positioning child absolute elements */
+      position: relative;
     }
 
     section h2 {
@@ -111,7 +109,8 @@
       margin-top: 1rem;
     }
 
-    .cert-badge {
+    .cert-badge,
+    .briefcase-badge {
       background: #000;
       border: none;
       border-radius: 10px;
@@ -121,6 +120,7 @@
       flex-direction: column;
       align-items: center;
       width: 180px;
+      max-width: 90%;
       color: #0ff;
       font-weight: bold;
       font-family: 'Roboto', sans-serif;
@@ -128,7 +128,8 @@
       transition: all 0.3s ease;
     }
 
-    .cert-badge:hover {
+    .cert-badge:hover,
+    .briefcase-badge:hover {
       box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
       transform: translateY(-3px);
     }
@@ -141,28 +142,6 @@
     .cert-badge span {
       font-size: 1rem;
       text-align: center;
-    }
-
-    .briefcase-badge {
-      background: #000;
-      border: none;
-      border-radius: 10px;
-      padding: 12px 20px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 180px;
-      color: #0ff;
-      font-weight: bold;
-      font-family: 'Roboto', sans-serif;
-      box-shadow: 0 0 10px #0ff;
-      transition: all 0.3s ease;
-    }
-
-    .briefcase-badge:hover {
-      box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
-      transform: translateY(-3px);
     }
 
     .briefcase-icon {
@@ -182,7 +161,6 @@
       }
     }
 
-    /* New About Me button styling */
     .about-btn {
       position: absolute;
       bottom: 20px;
@@ -204,6 +182,40 @@
     .about-btn:hover {
       box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
       transform: translateY(-3px);
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      section {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .badge-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-btn {
+        position: static;
+        display: block;
+        margin: 1rem auto 0 auto;
+      }
+
+      .cert-badge,
+      .briefcase-badge {
+        width: 90%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
@@ -229,8 +241,7 @@
       I'm Kevin Holt, a seasoned maintenance and manufacturing leader turned cloud and tech explorer.
       From SCADA systems and CNC optimization to Lean Six Sigma wins, I blend hands-on expertise with a drive for digital evolution.
     </p>
-
-    <button class="about-btn" onclick="window.location.href='third.html'">Learn More</button>
+    <button class="about-btn" onclick="window.open('third.html', '_blank')">Learn More</button>
   </section>
 
   <section id="projects">
@@ -261,7 +272,7 @@
         <span>Introduction to Cognitive Project Management in AI (CPMAI)™</span>
       </button>
 
-      <button class="cert-badge" onclick="window.location.href='second.html'">
+      <button class="cert-badge" onclick="window.open('second.html', '_blank')">
         <img src="360.png" alt="Industrial Electricity and Electronics Badge" />
         <span>Industrial Electricity and Electronics Series</span>
       </button>
@@ -291,3 +302,4 @@
   </footer>
 </body>
 </html>
+

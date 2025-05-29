@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>More About Kevin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -15,19 +15,11 @@
       min-height: 100vh;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }  
-
     h1 {
       font-family: 'Orbitron', sans-serif;
       color: #0ff;
       margin-bottom: 1rem;
+      text-align: left;
     }
 
     .content-container {
@@ -43,6 +35,7 @@
       float: right;
       margin-left: 1.5rem;
       margin-bottom: 1rem;
+      display: block;
     }
 
     p {
@@ -51,6 +44,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px #0ff;
       overflow: hidden;
+      text-align: left;
     }
 
     .back-button {
@@ -64,11 +58,31 @@
       cursor: pointer;
       box-shadow: 0 0 10px #0ff;
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .back-button:hover {
       box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
       transform: translateY(-3px);
+    }
+
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      .profile-pic {
+        float: none;
+        margin: 0 auto 1rem auto;
+        display: block;
+      }
+      p {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      .back-button {
+        display: block;
+        margin: 2rem auto 0 auto;
+      }
     }
   </style>
 </head>
@@ -76,20 +90,19 @@
   <div class="content-container">
     <h1>About Me</h1>
 
-    <!-- Your image here -->
     <img src="Kevin_Folio.JPG" alt="Kevin's Photo" class="profile-pic" />
 
-    <p>	  
-	  My journey into the world of mechanics and manufacturing began at the tender age of five, inspired by my father—a Volkswagen mechanic and also my hero. Growing up with a passion for fixing and understanding hot things ticked, My early hands-on experiences set the stage for a career grounded in practical knowledge and relentless curiosity.
+    <p>
+      My journey into the world of mechanics and manufacturing began at the tender age of five, inspired by my father—a Volkswagen mechanic and also my hero. Growing up with a passion for fixing and understanding hot things ticked, My early hands-on experiences set the stage for a career grounded in practical knowledge and relentless curiosity.
       <br /><br />
-	  My professional career started in boat manufacturing, where I honed my skills crafting high-quality vessels. From the shop floor, I progressed to repairing tools for the night shift, a role that combined my technical aptitude with problem-solving instincts. This hands-on work laid the foundation for my transition into maintenance—a pivotal move that expanded my responsibilities and became the springboard for my leadership development and project oversight capabilities.
-	  <br /><br />
-	  My leadership style is rooted in collaboration and mutual respect. As a round-table leader, I value every team member’s input and foster an environment where debate and learning thrive. I believes leadership is about riding alongside your team, sharing both victories and challenges, and never abandoning the people who depend on you.
-	  <br /><br />
-	  Over the years, I have evolved from a skilled maintenance professional into a hybrid powerhouse—merging my mechanical expertise with emerging technology. Recognizing the shifting industry landscape, I'm actively pivoting towards the tech sector, leveraging my background to bridge the gap between hands-on work and digital innovation.
-	  <br /><br />
-	  Though I don't come from a traditional educational background, MY intelligence, adaptability, and dedication to continuous learning have propelled me forward. I encourages others with similar roots to embrace new skills and stay relevant in a rapidly changing world.
-	  <br /><br />
+      My professional career started in boat manufacturing, where I honed my skills crafting high-quality vessels. From the shop floor, I progressed to repairing tools for the night shift, a role that combined my technical aptitude with problem-solving instincts. This hands-on work laid the foundation for my transition into maintenance—a pivotal move that expanded my responsibilities and became the springboard for my leadership development and project oversight capabilities.
+      <br /><br />
+      My leadership style is rooted in collaboration and mutual respect. As a round-table leader, I value every team member’s input and foster an environment where debate and learning thrive. I believes leadership is about riding alongside your team, sharing both victories and challenges, and never abandoning the people who depend on you.
+      <br /><br />
+      Over the years, I have evolved from a skilled maintenance professional into a hybrid powerhouse—merging my mechanical expertise with emerging technology. Recognizing the shifting industry landscape, I'm actively pivoting towards the tech sector, leveraging my background to bridge the gap between hands-on work and digital innovation.
+      <br /><br />
+      Though I don't come from a traditional educational background, MY intelligence, adaptability, and dedication to continuous learning have propelled me forward. I encourages others with similar roots to embrace new skills and stay relevant in a rapidly changing world.
+      <br /><br />
       Today, I stand as a versatile professional, ready to lead in roles that combine the grit of maintenance with the precision of technology—a true example of adaptability and growth in the modern workforce.
     </p>
 

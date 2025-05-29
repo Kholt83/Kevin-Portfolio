@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>360Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
 
@@ -30,23 +31,23 @@
     header {
       background: #000;
       color: #0ff;
-      padding: 2rem 0;
+      padding: 2rem 1rem;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
     header h1 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-family: 'Orbitron', sans-serif;
+      line-height: 1.2;
     }
 
     section {
-      padding: 2rem;
+      padding: 2rem 1rem;
       max-width: 1000px;
-      margin: auto;
+      margin: 2rem auto;
       background: rgba(0, 0, 0, 0.7);
-      margin-top: 2rem;
       border-radius: 10px;
     }
 
@@ -55,13 +56,19 @@
       border-bottom: 2px solid #0ff;
       padding-bottom: 0.5rem;
       font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      margin-bottom: 1rem;
     }
 
     iframe {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 600px;
       margin: 1rem 0;
       border: none;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     }
 
     footer {
@@ -70,12 +77,13 @@
       text-align: center;
       padding: 1rem;
       margin-top: 3rem;
+      font-size: 0.9rem;
     }
-	
-	.back-button {
-      position: fixed;           /* This pins it to the screen */
-      bottom: 40px;              /* Distance from the bottom */
-      left: 40px;               /* Distance from the right */
+
+    .back-button {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
       background: #000;
       border: none;
       border-radius: 10px;
@@ -85,58 +93,87 @@
       cursor: pointer;
       box-shadow: 0 0 10px #0ff;
       transition: all 0.3s ease;
-      z-index: 1000;             /* Make sure it's above other stuff */
+      z-index: 1000;
+    }
+
+    .back-button:hover {
+      box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
+      transform: translateY(-3px);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      iframe {
+        height: 400px;
+      }
+
+      section {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .back-button {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Industrial Electricity & Electronics Series</h1>
+    <h1>Industrial Electricity &amp; Electronics Series</h1>
   </header>
 
   <section>
     <h2>My Training Certificates</h2>
 
-  <iframe src="ac_and_dc_motors.pdf" width="100%" height="600px"></iframe>
-  <iframe src="ac_generation_and_basic_ac_concepts.pdf" width="100%" height="600px"></iframe>
-  <iframe src="basic_electricity.pdf" width="100%" height="600px"></iframe>
-  <iframe src="basic_laws_of_electrical_circuits.pdf" width="100%" height="600px"></iframe>
-  <iframe src="batteries.pdf" width="100%" height="600px"></iframe>
-  <iframe src="bipolar_transistors.pdf" width="100%" height="600px"></iframe>
-  <iframe src="circuit_breakers.pdf" width="100%" height="600px"></iframe>
-  <iframe src="communication_and_controls_i.pdf" width="100%" height="600px"></iframe>
-  <iframe src="communication_and_controls_ii.pdf" width="100%" height="600px"></iframe>
-  <iframe src="conductors_and_insulators.pdf" width="100%" height="600px"></iframe>
-  <iframe src="diodes.pdf" width="100%" height="600px"></iframe>
-  <iframe src="electrical_power.pdf" width="100%" height="600px"></iframe>
-  <iframe src="electrical_safe_work_practices.pdf" width="100%" height="600px"></iframe>
-  <iframe src="electromagnetism.pdf" width="100%" height="600px"></iframe>
-  <iframe src="fuses.pdf" width="100%" height="600px"></iframe>
-  <iframe src="grounding_practices.pdf" width="100%" height="600px"></iframe>
-  <iframe src="inductance_capacitance_and_impedance.pdf" width="100%" height="600px"></iframe>
-  <iframe src="introduction_to_plcs.pdf" width="100%" height="600px"></iframe>
-  <iframe src="introduction_to_vfds.pdf" width="100%" height="600px"></iframe>
-  <iframe src="logic_gates_and_number_systems.pdf" width="100%" height="600px"></iframe>
-  <iframe src="motor_control_fundamentals.pdf" width="100%" height="600px"></iframe>
-  <iframe src="other_semiconductors.pdf" width="100%" height="600px"></iframe>
-  <iframe src="parallel_circuits.pdf" width="100%" height="600px"></iframe>
-  <iframe src="power_supplies.pdf" width="100%" height="600px"></iframe>
-  <iframe src="print_reading.pdf" width="100%" height="600px"></iframe>
-  <iframe src="resistors.pdf" width="100%" height="600px"></iframe>
-  <iframe src="series_circuits.pdf" width="100%" height="600px"></iframe>
-  <iframe src="series_parallel_circuits.pdf" width="100%" height="600px"></iframe>
-  <iframe src="servo_drive_fundamentals.pdf" width="100%" height="600px"></iframe>
-  <iframe src="switches_and_relays.pdf" width="100%" height="600px"></iframe>
-  <iframe src="test_equipment.pdf" width="100%" height="600px"></iframe>
-  <iframe src="transformers.pdf" width="100%" height="600px"></iframe>
-  <iframe src="troubleshooting.pdf" width="100%" height="600px"></iframe>
-  <iframe src="uninterruptible_power_supplies.pdf" width="100%" height="600px"></iframe>
+    <iframe src="ac_and_dc_motors.pdf" title="AC and DC Motors"></iframe>
+    <iframe src="ac_generation_and_basic_ac_concepts.pdf" title="AC Generation and Basic AC Concepts"></iframe>
+    <iframe src="basic_electricity.pdf" title="Basic Electricity"></iframe>
+    <iframe src="basic_laws_of_electrical_circuits.pdf" title="Basic Laws of Electrical Circuits"></iframe>
+    <iframe src="batteries.pdf" title="Batteries"></iframe>
+    <iframe src="bipolar_transistors.pdf" title="Bipolar Transistors"></iframe>
+    <iframe src="circuit_breakers.pdf" title="Circuit Breakers"></iframe>
+    <iframe src="communication_and_controls_i.pdf" title="Communication and Controls I"></iframe>
+    <iframe src="communication_and_controls_ii.pdf" title="Communication and Controls II"></iframe>
+    <iframe src="conductors_and_insulators.pdf" title="Conductors and Insulators"></iframe>
+    <iframe src="diodes.pdf" title="Diodes"></iframe>
+    <iframe src="electrical_power.pdf" title="Electrical Power"></iframe>
+    <iframe src="electrical_safe_work_practices.pdf" title="Electrical Safe Work Practices"></iframe>
+    <iframe src="electromagnetism.pdf" title="Electromagnetism"></iframe>
+    <iframe src="fuses.pdf" title="Fuses"></iframe>
+    <iframe src="grounding_practices.pdf" title="Grounding Practices"></iframe>
+    <iframe src="inductance_capacitance_and_impedance.pdf" title="Inductance, Capacitance and Impedance"></iframe>
+    <iframe src="introduction_to_plcs.pdf" title="Introduction to PLCs"></iframe>
+    <iframe src="introduction_to_vfds.pdf" title="Introduction to VFDs"></iframe>
+    <iframe src="logic_gates_and_number_systems.pdf" title="Logic Gates and Number Systems"></iframe>
+    <iframe src="motor_control_fundamentals.pdf" title="Motor Control Fundamentals"></iframe>
+    <iframe src="other_semiconductors.pdf" title="Other Semiconductors"></iframe>
+    <iframe src="parallel_circuits.pdf" title="Parallel Circuits"></iframe>
+    <iframe src="power_supplies.pdf" title="Power Supplies"></iframe>
+    <iframe src="print_reading.pdf" title="Print Reading"></iframe>
+    <iframe src="resistors.pdf" title="Resistors"></iframe>
+    <iframe src="series_circuits.pdf" title="Series Circuits"></iframe>
+    <iframe src="series_parallel_circuits.pdf" title="Series Parallel Circuits"></iframe>
+    <iframe src="servo_drive_fundamentals.pdf" title="Servo Drive Fundamentals"></iframe>
+    <iframe src="switches_and_relays.pdf" title="Switches and Relays"></iframe>
+    <iframe src="test_equipment.pdf" title="Test Equipment"></iframe>
+    <iframe src="transformers.pdf" title="Transformers"></iframe>
+    <iframe src="troubleshooting.pdf" title="Troubleshooting"></iframe>
+    <iframe src="uninterruptible_power_supplies.pdf" title="Uninterruptible Power Supplies"></iframe>
   </section>
 
   <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+
   <footer>
-    <p>© 2025 Kevin Holt — Crafted with volts & vision ⚡</p>
+    <p>© 2025 Kevin Holt — Crafted with volts &amp; vision ⚡</p>
   </footer>
 
 </body>

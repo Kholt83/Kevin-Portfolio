@@ -58,7 +58,29 @@
     }
 
     .pdf-container {
-      margin: 2rem 0;
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 8.5 / 11; /* standard letter paper ratio */
+      overflow: hidden;
+      position: relative;
+      margin: 1rem 0;
+    }
+
+    .pdf-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform-origin: top left;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Mobile scaling */
+    @media (max-width: 768px) {
+    .pdf-container iframe {
+      transform: scale(0.8);  /* scale down for small screens */
     }
 
     .pdf-title {
@@ -141,29 +163,6 @@
         padding: 10px 18px;
         font-size: 0.9rem;
       }
-	  
-	  .pdf-wrapper {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        padding-top: 141%; /* 8.5x11 aspect ratio */
-      }
-
-      .pdf-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      /* Optional scaling for smaller screens */
-      @media (max-width: 768px) {
-       .pdf-wrapper {
-        transform: scale(0.9);
-        transform-origin: top center;
-      }
     }
   </style>
 </head>
@@ -177,238 +176,238 @@
     <h2>My Training Certificates</h2>
 
     
-    <div class="pdf-wrapper">
+    <div class="pdf-container">
       <div class="pdf-title">AC and DC Motors</div>
       <div class="responsive-iframe">
         <iframe src="ac_and_dc_motors.pdf" title="AC and DC Motors"></iframe>
       </div>
     </div>
     
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">AC Generation and Basic AC Concepts</div>
       <div class="responsive-iframe">
         <iframe src="ac_generation_and_basic_ac_concepts.pdf" title="AC Generation and Basic AC Concepts"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Basic Electricity</div>
       <div class="responsive-iframe">
         <iframe src="basic_electricity.pdf" title="Basic Electricity"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Basic Laws of Electrical Circuits</div>
       <div class="responsive-iframe">
         <iframe src="basic_laws_of_electrical_circuits.pdf" title="Basic Laws of Electrical Circuits"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Batteries</div>
       <div class="responsive-iframe">
         <iframe src="batteries.pdf" title="Batteries"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Bipolar Transistors</div>
       <div class="responsive-iframe">
         <iframe src="bipolar_transistors.pdf" title="Bipolar Transistors"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Circuit Breakers</div>
       <div class="responsive-iframe">
         <iframe src="circuit_breakers.pdf" title="Circuit Breakers"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Communication and Controls I</div>
       <div class="responsive-iframe">
         <iframe src="communication_and_controls_i.pdf" title="Communication and Controls I"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Communication and Controls II</div>
       <div class="responsive-iframe">
         <iframe src="communication_and_controls_ii.pdf" title="Communication and Controls II"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Conductors and Insulators</div>
       <div class="responsive-iframe">
         <iframe src="conductors_and_insulators.pdf" title="Conductors and Insulators"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Diodes</div>
       <div class="responsive-iframe">
         <iframe src="diodes.pdf" title="Diodes"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Electrical Power</div>
       <div class="responsive-iframe">
         <iframe src="electrical_power.pdf" title="Electrical Power"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Electrical Safe Work Practices</div>
       <div class="responsive-iframe">
         <iframe src="electrical_safe_work_practices.pdf" title="Electrical Safe Work Practices"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Electromagnetism</div>
       <div class="responsive-iframe">
         <iframe src="electromagnetism.pdf" title="Electromagnetism"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Fuses</div>
       <div class="responsive-iframe">
         <iframe src="fuses.pdf" title="Fuses"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Grounding Practices</div>
       <div class="responsive-iframe">
         <iframe src="grounding_practices.pdf" title="Grounding Practices"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Inductance, Capacitance, and Impedence</div>
       <div class="responsive-iframe">
         <iframe src="inductance__capacitance__and_impedance.pdf" title="Inductance, Capacitance, and Impedence"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Introduction to PLCs</div>
       <div class="responsive-iframe">
         <iframe src="introduction_to_plcs.pdf" title="Introduction to PLCs"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Introduction to VFDs</div>
       <div class="responsive-iframe">
         <iframe src="introduction_to_vfds.pdf" title="Introduction to VFDs"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Logic Gates and Number Systems</div>
       <div class="responsive-iframe">
         <iframe src="logic_gates_and_number_systems.pdf" title="Logic Gates and Number Systems"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Motor Control Fundamentals</div>
       <div class="responsive-iframe">
         <iframe src="motor_control_fundamentals.pdf" title="Motor Control Fundamentals"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Other Semiconductors</div>
       <div class="responsive-iframe">
         <iframe src="other_semiconductors.pdf" title="Other Semiconductors"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Parallel Circuits</div>
       <div class="responsive-iframe">
         <iframe src="parallel_circuits.pdf" title="Parallel Circuits"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Power Supplies</div>
       <div class="responsive-iframe">
         <iframe src="power_supplies.pdf" title="Power Supplies"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Print Reading</div>
       <div class="responsive-iframe">
         <iframe src="print_reading.pdf" title="Print Reading"></iframe>
       </div>
     </div>
 		
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Resistors</div>
       <div class="responsive-iframe">
         <iframe src="resistors.pdf" title="Resistors"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Series Circuits</div>
       <div class="responsive-iframe">
         <iframe src="series_circuits.pdf" title="Series Circuits"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Series Parallel Circuits</div>
       <div class="responsive-iframe">
         <iframe src="series_parallel_circuits.pdf" title="Series Parallel Circuits"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Servo Drive Fundamentals</div>
       <div class="responsive-iframe">
         <iframe src="servo_drive_fundamentals.pdf" title="Servo Drive Fundamentals"></iframe>
       </div>
     </div>
 	
-	<div class"pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Switches and Relays</div>
       <div class="responsive-iframe">
         <iframe src="switches_and_relays.pdf" title="Switches and Relays"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Test Equipment</div>
       <div class="responsive-iframe">
         <iframe src="test_equipment.pdf" title="Test Equipment"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Transformers</div>
       <div class="responsive-iframe">
         <iframe src="transformers.pdf" title="Transformers"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Basic Electricity</div>
       <div class="responsive-iframe">
         <iframe src="troubleshooting.pdf" title="Basic Electricity"></iframe>
       </div>
     </div>
 	
-	<div class="pdf-wrapper">
+	<div class="pdf-container">
       <div class="pdf-title">Uninterruptible Power Supplies</div>
       <div class="responsive-iframe">
         <iframe src="uninterruptible_power_supplies.pdf" title="Uninterruptible Power Supplies"></iframe>

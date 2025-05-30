@@ -16,6 +16,25 @@
       position: relative;
       overflow-x: hidden; /* prevent horizontal scroll if any */
     }
+	
+    .tool {
+       position: absolute;
+       top: -50px;
+       font-size: 2rem;
+       animation-name: fall;
+       animation-timing-function: linear;
+       animation-iteration-count: infinite;
+       pointer-events: none;
+       user-select: none;
+    }
+	
+	 #tool-rain-container {
+      display: none;  /* Hide tool rain completely */
+    }
+
+    body.light-mode #tool-rain-container {
+      display: block;
+	}    
 
     body::before {
       content: "";
@@ -88,6 +107,7 @@
       margin: 2rem auto;
       background: rgba(0, 0, 0, 0.7);
       border-radius: 10px;
+	  box-shadow: 0 0 10px #0ff;
       position: relative;
     }
 
@@ -164,6 +184,17 @@
       fill: #0ff;
       animation: pulseGlow 2s infinite ease-in-out;
     }
+	
+	@keyframes fall {
+      0% {
+      transform: translateY(-50px);
+      opacity: 1;
+      }
+      100% {
+      transform: translateY(110vh); /* go beyond bottom of screen */
+      opacity: 0;
+      }
+    }
 
     @keyframes pulseGlow {
       0%, 100% {
@@ -175,6 +206,24 @@
     }
 
     .about-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: auto;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff;
+      background: #000;
+      border: none;
+      border-radius: 10px;
+      color: #0ff;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      transition: all 0.3s ease;
+    }
+	
+	.toggle-btn {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -191,7 +240,7 @@
       font-family: 'Roboto', sans-serif;
       transition: all 0.3s ease;
     }
-
+	
     .about-btn:hover {
       box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
       transform: translateY(-3px);
@@ -233,7 +282,7 @@
 	  section {
         text-align: center; /* ❌ This affects ALL content inside */
       }
-    }/* ==== END TOOL RAIN STYLE ==== */
+    }
   </style>
   <style>
   body.light-mode {
@@ -250,6 +299,8 @@
   min-height: 100vh;
   position: relative;
 }
+
+
 
 
 body.light-mode::before {
@@ -372,9 +423,27 @@ body.light-mode .about-btn {
   box-shadow: 0 0 10px #FFD800, inset 0 -3px 6px rgba(0, 0, 0, 0.4);
 }
 
+body.light-mode .toggle-btn {
+  background: #FFD800;
+  color: #111; /* dark text on yellow */
+  border: 2px solid #111;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #FFD800, inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+}
+
 body.light-mode .cert-badge:hover,
 body.light-mode .briefcase-badge:hover,
 body.light-mode .about-btn:hover {
+  box-shadow: 0 0 25px #FFD800, 0 0 40px #ffff66;
+  transform: translateY(-3px) scale(1.03);
+}
+
+body.light-mode .toggle-btn:hover {
   box-shadow: 0 0 25px #FFD800, 0 0 40px #ffff66;
   transform: translateY(-3px) scale(1.03);
 }
@@ -434,6 +503,12 @@ body.light-mode .briefcase-icon {
     display: block;
     margin: 1rem auto 0 auto;
   }
+  
+  body.light-mode .toggle-btn {
+    position: static;
+    display: block;
+    margin: 1rem auto 0 auto;
+  }
 
   body.light-mode .cert-badge,
   body.light-mode .briefcase-badge {
@@ -471,8 +546,9 @@ body.light-mode .tool {
 </head>
 <body>
   <canvas id="matrix"></canvas>
-  
-  <button id="themeToggle" class="about-btn" style="top: 20px; right: 20px; position: absolute;">Try Me!</button>
+
+  <button id="themeToggle" class="toggle-btn" aria-pressed="false" aria-label="Toggle Dark and Light Mode">Try Me!</button>
+
   <header>
     <h1>Kevin Holt</h1>
     <p>Certified Maintenance Leader | Project Mastermind | Cloud Explorer</p>
@@ -482,7 +558,7 @@ body.light-mode .tool {
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#certs">Certifications & Course Work</a></li>
+      <li><a href="#certs">Certifications &amp; Course Work</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -546,92 +622,136 @@ body.light-mode .tool {
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>📧 <a href="mailto:k.d.holt@outlook.com">k.d.holt@outlook.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/kholt83/" target="_blank">LinkedIn Profile</a></p>
+    <p>Feel free to reach out via <a href="mailto:kevin.holt@example.com">kevin.holt@example.com</a> or connect on <a href="https://www.linkedin.com/in/kholt83/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
   </section>
 
   <footer>
-    <p>© 2025 Kevin Holt. Built with Curiosity and my AI friend Naomi.</p>
+    <p>&copy; 2025 Kevin Holt. All rights reserved.</p>
   </footer>
 
   <script>
-    (function() {
-      const tools = ['🔧', '🔨', '🪛', '⚙️', '🔩', '🪚', '🔗', '🌐', '💻', '🧰', ];
-      const toolCount = 40;
-	 
+    // Dark/Light mode toggle logic
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const matrixCanvas = document.getElementById('matrix');
+    const ctx = matrixCanvas.getContext('2d');
 
-      function randomRange(min, max) {
-        return Math.random() * (max - min) + min;
+    // Matrix rain variables
+    const letters = 'アカサタナハマヤラワガザダバパアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789';
+    const fontSize = 16;
+    let columns;
+    let drops;
+
+    function resizeCanvas() {
+      matrixCanvas.width = window.innerWidth;
+      matrixCanvas.height = window.innerHeight;
+      columns = matrixCanvas.width / fontSize;
+      drops = [];
+      for (let x = 0; x < columns; x++) {
+        drops[x] = Math.random() * -1000; // Start at random height
       }
-
-      for (let i = 0; i < toolCount; i++) {
-        const tool = document.createElement('div');
-        tool.classList.add('tool');
-        tool.textContent = tools[Math.floor(Math.random() * tools.length)];
-        tool.style.left = `${randomRange(0, 100)}vw`;
-        tool.style.animationDuration = `${randomRange(5, 10)}s`;
-        tool.style.animationDelay = `${randomRange(0, 10)}s`;
-        tool.style.fontSize = `${randomRange(20, 40)}px`;
-        document.body.appendChild(tool);
-      }
-    })();
-  </script>
-  <script>
-    (() => {
-      const canvas = document.getElementById('matrix');
-      const ctx = canvas.getContext('2d');
-
-      let width = canvas.width = window.innerWidth;
-      let height = canvas.height = window.innerHeight;
-
-      const letters = "アァイィウヴエカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      const fontSize = 16;
-      const columns = Math.floor(width / fontSize);
-
-      const drops = Array(columns).fill(1);
-
-      function draw() {
-	    // Translucent black background for the fade effect
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, width, height);
-
-        ctx.fillStyle = '#00ffff'; // Cyan
-        ctx.font = fontSize + 'px monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-          const text = letters.charAt(Math.floor(Math.random() * letters.length));
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-          if (drops[i] * fontSize > height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
-          drops[i]++;
-        }
-      }
-
-      setInterval(draw, 50);
-
-      window.addEventListener('resize', () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      });
-    })();
-  </script>
-  <script>
-   const themeToggle = document.getElementById('themeToggle');
-   const body = document.body;
-   const matrixCanvas = document.getElementById('matrix');
-
-    themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-  
-    // Hide matrix in light mode
-    if (body.classList.contains('light-mode')) {
-      matrixCanvas.style.display = 'none';
-    } else {
-      matrixCanvas.style.display = 'block';
     }
-  });
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+
+      ctx.fillStyle = '#0ff';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    let matrixInterval;
+
+    function startMatrix() {
+      matrixCanvas.style.display = 'block';
+      resizeCanvas();
+      matrixInterval = setInterval(drawMatrix, 50);
+    }
+
+    function stopMatrix() {
+      matrixCanvas.style.display = 'none';
+      clearInterval(matrixInterval);
+    }
+
+    // Tool rain for light mode
+    const toolNames = ['🔧', '⚙️', '🛠️', '🔩', '🪛', '🔨'];
+    let toolRainInterval;
+    function createTool() {
+      const tool = document.createElement('div');
+      tool.classList.add('tool');
+      tool.style.left = Math.random() * 100 + 'vw';
+      tool.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+      tool.textContent = toolNames[Math.floor(Math.random() * toolNames.length)];
+      document.body.appendChild(tool);
+
+      const fallDuration = Math.random() * 7000 + 5000;
+      tool.style.animationDuration = fallDuration + 'ms';
+
+      setTimeout(() => {
+        tool.remove();
+      }, fallDuration);
+    }
+
+    function startToolRain() {
+      toolRainInterval = setInterval(createTool, 300);
+    }
+
+    function stopToolRain() {
+      clearInterval(toolRainInterval);
+      document.querySelectorAll('.tool').forEach(t => t.remove());
+    }
+
+    // Load preference from localStorage
+    if(localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-mode');
+      startToolRain();
+      stopMatrix();
+      toggleBtn.textContent = 'Dark Mode';
+      toggleBtn.setAttribute('aria-pressed', 'true');
+    } else {
+      body.classList.remove('light-mode');
+      stopToolRain();
+      startMatrix();
+      toggleBtn.textContent = 'Light Mode';
+      toggleBtn.setAttribute('aria-pressed', 'false');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if(body.classList.contains('light-mode')) {
+        // Switch to dark
+        body.classList.remove('light-mode');
+        stopToolRain();
+        startMatrix();
+        toggleBtn.textContent = 'Light Mode';
+        toggleBtn.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        // Switch to light
+        body.classList.add('light-mode');
+        stopMatrix();
+        startToolRain();
+        toggleBtn.textContent = 'Dark Mode';
+        toggleBtn.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Resize canvas on window resize
+    window.addEventListener('resize', () => {
+      if(!body.classList.contains('light-mode')) {
+        resizeCanvas();
+      }
+    });
   </script>
 </body>
 </html>

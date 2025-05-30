@@ -10,11 +10,11 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #eee;
+	  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+	  color: #eee;
       min-height: 100vh;
       position: relative;
-      overflow-x: hidden; /* prevent horizontal scroll if any */
+	  overflow-x: hidden; /* prevent horizontal scroll if any */
     }
 	
     .tool {
@@ -52,7 +52,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -2; /* behind even the body::before overlay */
+      z-index: -1; /* behind even the body::before overlay */
       pointer-events: none;
       user-select: none;
 	  background: transparent;
@@ -272,6 +272,12 @@
         display: block;
         margin: 1rem auto 0 auto;
       }
+	  
+	  .toggle-btn {
+        position: static;
+        display: block;
+        margin: 1rem auto 0 auto;
+      }
 
       .cert-badge,
       .briefcase-badge {
@@ -469,7 +475,7 @@ body.light-mode .briefcase-icon {
 /* ===== PULSE ANIMATION ===== */
 @keyframes pulseGlowYellow {
   0%, 100% {
-    filter: drop-shadow(0 0 0px #FFD800);
+    filter: drop-shadow(0 0 0px #ffd800);
   }
   50% {
     filter: drop-shadow(0 0 12px #ffff66);
@@ -583,12 +589,11 @@ body.light-mode .tool {
   </section>
 
   <section id="certs">
-    <h2>Certifications & Course Work</h2>
+    <h2>Certifications & Coursework</h2>
     <div class="badge-container">
       <button class="cert-badge" onclick="window.open('5sxrkrhr_1748146015166.pdf', '_blank')">
         <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/144472399" alt="Lean Six Sigma Green Belt Badge" />
         <span>SSGI Lean Six Sigma Green Belt</span>
-        <span style="color:#ff0; font-size:0.85rem; margin-top: 4px; display: block;">🌟 Naomi’s Pick</span>
       </button>
 
       <button class="cert-badge" onclick="window.open('Generative_AI_Overview_for_Project_Managers.pdf', '_blank')">

@@ -7,11 +7,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     /* Base styles */
-    body {
-      font-family: 'Roboto', sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
       transition: background 0.5s ease, color 0.5s ease;
     }
 
@@ -34,6 +40,8 @@
     .content-container {
       max-width: 1000px;
       margin: 0 auto;
+      flex: 1;
+      padding: 2rem;
     }
 
     .profile-pic {
@@ -46,14 +54,6 @@
       margin-bottom: 1rem;
       display: block;
       transition: box-shadow 0.5s ease;
-    }
-
-    p {
-      padding: 1rem;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: left;
-      transition: background 0.5s ease, box-shadow 0.5s ease;
     }
 
     .back-button {
@@ -78,9 +78,7 @@
         margin: 0 auto 1rem auto;
         display: block;
       }
-      p {
-        text-align: center;
-      }
+     
       h1 {
         text-align: center;
       }
@@ -88,6 +86,24 @@
         display: block;
         margin: 2rem auto 0 auto;
       }
+    }
+
+    /* Footer styles - apply to footer element directly */
+    footer {
+      width: 100%;
+      background: #2e2e2e;
+      color: #FFD800;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid #FFD800;
+      margin-top: 0;
+      box-sizing: border-box;
+    }
+
+    body.dark footer {
+      background: #000;
+      color: #0ff;
+      border-top: 2px solid #00ffff;
     }
 
     /* Dark theme */
@@ -121,6 +137,19 @@
 
     body.dark .back-button:hover {
       box-shadow: 0 0 20px #0ff, 0 0 30px #00ffff;
+      transform: translateY(-3px) scale(1.03);
+    }
+    
+    body.dark .main  {
+      background: #000;
+      text-align: left;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: left;
+      transition: background 0.5s ease, box-shadow 0.5s ease;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #0ff;
     }
 
     /* Light theme */
@@ -151,13 +180,6 @@
       box-shadow: 0 0 25px #FFD800;
     }
 
-    body.light p {
-      background: #333;
-	  border: 2px solid #ffd800;
-	  border-radius: 6px
-      box-shadow: 0 0 20px #111, 0 0 10px #000;
-    }
-
     body.light .back-button {
       background: #FFD800;
       color: #111;
@@ -173,9 +195,22 @@
 
     body.light .back-button:hover {
       box-shadow: 0 0 25px #FFD800, 0 0 40px #ffff66;
+      transform: translateY(-3px) scale(1.03);
+    }
+    
+    body.light .main  {
+      background: #333;
+      text-align: left;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: left;
+      transition: background 0.5s ease, box-shadow 0.5s ease;
+      border: 2px solid #ffd800;
+      border-radius: 6px;
+      box-shadow: 0 0 20px #111, 0 0 10px #000;
     }
   </style>
-
 </head>
 <body>
   <div class="content-container">
@@ -183,7 +218,7 @@
 
     <img src="Kevin_Folio.JPG" alt="Kevin's Photo" class="profile-pic" />
 
-    <p>
+    <p class="main">
       My journey into the world of mechanics and manufacturing began at the tender age of five, inspired by my father—a Volkswagen mechanic and also my hero. Growing up with a passion for fixing and understanding hot things ticked, My early hands-on experiences set the stage for a career grounded in practical knowledge and relentless curiosity.
       <br /><br />
       My professional career started in boat manufacturing, where I honed my skills crafting high-quality vessels. From the shop floor, I progressed to repairing tools for the night shift, a role that combined my technical aptitude with problem-solving instincts. This hands-on work laid the foundation for my transition into maintenance—a pivotal move that expanded my responsibilities and became the springboard for my leadership development and project oversight capabilities.
@@ -199,6 +234,9 @@
 
     <button class="back-button" onclick="window.location.href='index.html'">← Back to Portfolio</button>
   </div>
+  <footer>
+    © 2025 Kevin Holt. Built with Curiosity and my AI friend Naomi.
+  </footer>
 
   <script>
     // Immediately apply the stored theme on page load

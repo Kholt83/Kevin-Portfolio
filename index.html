@@ -279,7 +279,7 @@
         margin: 1rem auto 0 auto;
       }
 	  
-	  .toggle-btn {
+      .toggle-btn {
         position: static;
         display: block;
         margin: 1rem auto 0 auto;
@@ -290,6 +290,7 @@
         width: 90%;
         max-width: 300px;
       }
+	    
       a {
         color: #0ff;
       }
@@ -297,6 +298,10 @@
       section {
         text-align: center; /* ❌ This affects ALL content inside */
       }
+
+      strong .badge-container {
+        color: #88f;
+      }	    
     }
   </style>
   <style>
@@ -531,6 +536,9 @@ body.light-mode .briefcase-icon {
   body.light-mode .briefcase-badge {
     width: 90%;
     max-width: 300px;
+  }
+  body.light-mode strong .badge-container {
+    color: #88f;
   }
 }
 

@@ -222,21 +222,32 @@
         }
 
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            .main, .second {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            iframe {
-                width: 100%;
-                max-width: 100%;
-            }
+       .gallery {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 24px;
+            padding: 0.5rem;
         }
+       .gallery img {
+            width: 90vw;
+            max-width: 350px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        .main, .second {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        iframe {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
     </style>
 </head>
 <body>
@@ -295,3 +306,4 @@ Outcome:
   </script>
 </body>
 </html>
+

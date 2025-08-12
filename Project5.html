@@ -33,6 +33,7 @@
             position: relative;
         }
 
+
         body::before {
             content: "";
             position: fixed;
@@ -107,7 +108,7 @@
             font-size: 1rem;
             line-height: 1.6;
             max-width: 800px;
-            margin: 4rem auto;
+            margin: 2rem auto;
             color: #0ff;
             box-sizing: border-box;
             background-color: #000; /* Dark background for main content */
@@ -119,36 +120,6 @@
             border-radius: 6px;
             box-shadow: 0 0 20px #111, 0 0 10px #000;
             border: 2px solid #ffd800;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            max-width: 1800px;
-            margin: 4rem auto 2rem auto; /* Center the gallery */
-            padding: 1rem;
-            justify-items: center; /* Center images in their grid cells */
-        }
-
-        .gallery img {
-            width: 600px;
-            height: 400px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #0ff, 0 0 10px #00ffff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
-        }
-
-        body.light .gallery img {
-            border-radius: 6px;
-            box-shadow: 0 0 20px #111, 0 0 10px #000;
-            border: 2px solid #ffd800;
-        }
-
-        /* Stagger effect: move every even image down */
-        .gallery img:nth-child(even) {
-            transform: translateY(40px);
         }
 
         .second {
@@ -176,7 +147,7 @@
             background-color: #111; /* Dark background for iframe */
             box-shadow: 0 0 10px #0ff, 0 0 10px #00ffff;
         }
-        
+
         body.light iframe {
             border-radius: 6px;
             box-shadow: 0 0 20px #111, 0 0 10px #000;
@@ -209,8 +180,8 @@
             border: 2px solid #111;
             border-radius: 8px;
             box-shadow: 0 0 10px #FFD800, inset 0 -3px 6px rgba(0, 0, 0, 0.4);
-        } 
-           
+        }  
+             
         .back-button:hover {
             box-shadow: 0 0 25px #0ff, 0 0 40px #00ffff;
             transform: translateY(-3px) scale(1.03);
@@ -219,87 +190,65 @@
         body.light .back-button:hover {
             box-shadow: 0 0 25px #FFD800, 0 0 40px #ffff66;
             transform: translateY(-3px) scale(1.03);
-        }
+        } 
 
         @media (max-width: 600px) {
-       .gallery {
-            grid-template-columns: 1fr;
-            justify-items: center;
-            gap: 24px;
-            padding: 0.5rem;
-        }
-       .gallery img {
-            width: 90vw;
-            max-width: 350px;
-            height: auto;
-            transform: none !important; /* <-- Add this line */
-        }
-        h1 {
-            font-size: 2rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-        }
-        .main, .second {
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
-        iframe {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .main, .second {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            iframe {
+                width: 100%;
+                max-width: 100%;
+            }
+        }            
     </style>
 </head>
 <body>
-        <h1>Naomittal Form - Self-Hosted Form Submission API</h1>
+        <h1> FANUC MT-Linki Implementation</h1>
         <p class="second">ROLE:
             <br /><br /> 
-            Freelance Full-Stack Developer, Systems Administrator
+            Systems Integrator / Network Engineer
             <br /><br />
            TOOLS:
            <br /><br />
-            Node.js, Express, JavaScript (ES6+), HTML5, CSS3, SQLite, Linux (Ubuntu), NGINX, Cloudflare (DNS/SSL), VS Code
+           FANUC MT-Linki, FOCAS2, SCADA, Ethernet/IP, SmartSheets
         </p>
-<div class="gallery">
-    <img src="Contact.webp" title="Desktop Homepage" alt="Desktop Homepage" />
-    <img src="Thank-you.webp" title="Mobile View" alt="Mobile View" />
-    <img src="Form.webp" title="Nginx Configuration" alt="Nginx Config" />
-</div>
-<h2>Project Overview</h2>
-    <div class="main">
-           A secure, cost-saving alternative to third-party form processors, built to handle customer inquiries directly on my own infrastructure.
+    <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/z0sdvs7z1t" width="400" height="225"></iframe>
+    <h2>Project Overview</h2>
+    <p class="main"> FANUC MT-Linki Machine Monitoring Implementation Collaborated on the successful deployment of FANUC MT-Linki across three CNC machines to enable real-time machine monitoring, alarm tracking, and uptime analytics. Took lead on network and machine-side integration, including configuring Ethernet communication via FOCAS2, assigning static IPs, and updating machine options to support MT-Linki connectivity.
 <br /><br />
- Key Highlights:
-<ul>
-    <li>Stack: Node.js, Express, SQLite, Cloudflare</li>
-    <li>Developed a lightweight backend to receive, validate, and store contact/booking form data.</li>
-    <li>Implemented spam filtering and secure data handling to protect customer information.</li>
-    <li>Configured email notifications for immediate follow-up.</li>
-    <li>Integrated seamlessly into the Michelle Nails & Spa website, replacing paid form services.</li>
-    <li>Reduced monthly costs while maintaining full control over data ownership and uptime.</li>
-</ul>
+Migrated the entire CNC machine network to a new IP family to resolve firewall and subnet conflicts, ensuring all equipment could reliably communicate with the MT-Linki server. Led the SCADA integration effort by collecting machine-side data and building out license configurations, achieving 70–80% of the integration scope. Developed uptime reporting workflows that funneled data into SmartSheets for cross-team visibility and executive dashboards.
 <br /><br />
-Outcome:
-<ul>
-    <li>Delivered faster, more reliable form submissions while eliminating SaaS fees and keeping all customer data in-house.</li>
-</ul>
-    </div>
-    <button class="back-button" onClick="location.href='index.html'">← Back</button>
+The project involved close collaboration with the IT team to ensure secure and reliable network connectivity, as well as coordination with machine operators to validate data accuracy and usability. Key challenges included troubleshooting initial communication issues, optimizing data collection intervals, and ensuring compliance with cybersecurity protocols. 
+<br /><br />
+The implementation resulted in significant improvements in machine monitoring capabilities, enabling proactive maintenance and operational efficiency gains. Key outcomes included:
+<br /><br />
+Results included increased accuracy in uptime reporting (outperforming prior manual logging methods), improved insight into operational inefficiencies, and enhanced responsiveness to machine alarms and downtime trends.
+    </p>
+    <button class="back-button" onClick="location.href='index.html'">← Back</button>         
     <footer>
-        © 2025 Kevin Holt. Built with curiosity, care, and coffee.
+        © 2025 Kevin Holt. Built with Curiosity and my AI friend Naomi.
     </footer>
     <script>
-    (function() {
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'dark') {
+       // Immediately apply the stored theme on page load
+       (function() {
+         const storedTheme = localStorage.getItem('theme');
+         if (storedTheme === 'dark') {
         document.body.classList.add('dark');
         document.body.classList.remove('light');
-      } else {
+        } else {
+        // default to light if no theme or any other value
         document.body.classList.add('light');
         document.body.classList.remove('dark');
-      }
-    })();
+        }
+       })();
   </script>
-</body>
+  </body>
 </html>

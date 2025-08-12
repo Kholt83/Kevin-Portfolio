@@ -44,6 +44,10 @@
             z-index: -1;
         }
 
+        body.light::before {
+            background: rgba(47, 47, 47, 0.6);
+        }
+
         footer {
             width: 100%;
             background: #000;
@@ -51,6 +55,14 @@
             text-align: center;
             padding: 1rem;
             border-top: 2px solid #00ffff;
+            margin-top: 0;
+            box-sizing: border-box;
+        }
+
+        body.light footer {
+            background: #333;
+            color: #FFD800;
+            border-top: 2px solid #FFD800;
             margin-top: 0;
             box-sizing: border-box;
         }
@@ -63,6 +75,26 @@
             font-weight: bold;
             font-size: 3rem;
         }
+
+        body.light h1 {
+            color: #FFD800;
+            border-color: #FFD800;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #0ff;
+            text-align: center;
+            margin-top: 5rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        body.light h2 {
+            color: #FFD800;
+            border-color: #FFD800;
+        }
+
         .main {
             text-align: left;
             padding: 1rem;
@@ -75,10 +107,48 @@
             font-size: 1rem;
             line-height: 1.6;
             max-width: 800px;
-            margin: 2rem auto;
+            margin: 4rem auto;
             color: #0ff;
             box-sizing: border-box;
             background-color: #000; /* Dark background for main content */
+        }
+
+        body.light .main {
+            background-color: #333; /* Lighter background for main content in light mode */
+            color: #FFD800; /* Lighter text color */
+            border-radius: 6px;
+            box-shadow: 0 0 20px #111, 0 0 10px #000;
+            border: 2px solid #ffd800;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1800px;
+            margin: 4rem auto 2rem auto; /* Center the gallery */
+            padding: 1rem;
+            justify-items: center; /* Center images in their grid cells */
+        }
+
+        .gallery img {
+            width: 600px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0ff, 0 0 10px #00ffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        body.light .gallery img {
+            border-radius: 6px;
+            box-shadow: 0 0 20px #111, 0 0 10px #000;
+            border: 2px solid #ffd800;
+        }
+
+        /* Stagger effect: move every even image down */
+        .gallery img:nth-child(even) {
+            transform: translateY(40px);
         }
 
         .second {
@@ -93,12 +163,15 @@
            
         }
 
+        body.light .second {
+            color: #FFD800; /* Lighter text color */
+        }
+
         iframe {
             display: block;
             margin: 2rem auto;
             width: 100%;
             max-width: 400px;
-            height: 340px;
             border-radius: 10px;
             background-color: #111; /* Dark background for iframe */
             box-shadow: 0 0 10px #0ff, 0 0 10px #00ffff;
@@ -136,7 +209,7 @@
             border: 2px solid #111;
             border-radius: 8px;
             box-shadow: 0 0 10px #FFD800, inset 0 -3px 6px rgba(0, 0, 0, 0.4);
-        }
+        } 
            
         .back-button:hover {
             box-shadow: 0 0 25px #0ff, 0 0 40px #00ffff;
@@ -147,9 +220,91 @@
             box-shadow: 0 0 25px #FFD800, 0 0 40px #ffff66;
             transform: translateY(-3px) scale(1.03);
         }
+
+        @media (max-width: 600px) {
+       .gallery {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 24px;
+            padding: 0.5rem;
+        }
+       .gallery img {
+            width: 90vw;
+            max-width: 350px;
+            height: auto;
+            transform: none !important; /* <-- Add this line */
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        .main, .second {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        iframe {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
     </style>
 </head>
 <body>
-        <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://www.bing.com/th?u=http%3a%2f%2fwww.cargotrade.net%2fassets%2fimg%2fUnderConstruction.gif&ehk=JoYzwJP%2bOQjdu74L223%2fda83IjuJD%2fe1jImp51eE41s%3d&w=236&h=320&rs=1&qlt=90&bgcl=ececec&o=6&cb=thws1&pid=PersonalBing" width="400" height="225"></iframe>
-        <a href="index.html" class="back-button">Back</a>
+        <h1>Portfolio Website Creation (with AI Collaboration)</h1>
+        <p class="second">ROLE:
+            <br /><br /> 
+            Project Lead, Content Strategist, Developer
+            <br /><br />
+           TOOLS:
+           <br /><br />
+            VS Code, HTML, CSS, JavaScript, TailwindCSS, ChatGPT, Git, GitHub Pages
+        </p>
+<div class="gallery">
+    <img src="ChatGPT(Naomi).png" title="ChatGPT(Naomi)" alt="ChatGPT(Naomi)" />
+    <img src="VS Code.png" title="VS Code" alt="VS Code" />
+    <img src="Portfolio.png" title="Portfolio" alt="Portfolio" />
+</div>
+<h2>Project Overview</h2>
+    <div class="main">Built a professional portfolio website from scratch using VS Code, combining classic web development techniques with real-time AI collaboration. The project showcases technical capabilities, personal branding, and modern development workflow integration.
+<br /><br />
+ Key Highlights:
+<ul>
+    <li>Ideation: Leveraged ChatGPT for brainstorming, content drafting, and iterative feedback on design and structure.</li>
+
+    <li>Code-Centric Development: Used VS Code as the primary development environment for efficient code editing, previewing, and Git integration.</li>
+
+    <li>Responsive & Accessible: Implemented TailwindCSS for rapid styling and mobile-first design principles to ensure a seamless experience across devices.</li>
+
+    <li>Version Controlled: Maintained with Git and GitHub, allowing for continuous updates, iteration tracking, and collaboration.</li>
+
+    <li>Privacy-Aware Thinking: Planned for ethical analytics tools like Plausible while staying budget-conscious.</li>
+</ul>
+<br /><br />
+Outcome:
+<ul>
+    <li>A sleek, professional website that not only demonstrates front-end skills and AI-assisted workflows, but serves as a living document of ongoing personal and professional growth.</li>
+</ul>
+    </div>
+    <button class="back-button" onClick="location.href='index.html'">← Back</button>
+    <footer>
+        © 2025 Kevin Holt. Built with Curiosity and my AI friend Naomi.
+    </footer>
+    <script>
+    // Immediately apply the stored theme on page load
+    (function() {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        document.body.classList.add('dark');
+        document.body.classList.remove('light');
+      } else {
+        // default to light if no theme or any other value
+        document.body.classList.add('light');
+        document.body.classList.remove('dark');
+      }
+    })();
+  </script>
 </body>
+</html>
+

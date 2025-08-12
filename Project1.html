@@ -252,54 +252,50 @@
     </style>
 </head>
 <body>
-        <h1>Portfolio Website Creation (with AI Collaboration)</h1>
+        <h1>Naomi Website Chat Assistant (Full-Stack)</h1>
         <p class="second">ROLE:
             <br /><br /> 
-            Project Lead, Content Strategist, Developer
+            Front-End Developer, Conversational Flow Designer,Back-End/API Developer
             <br /><br />
            TOOLS:
            <br /><br />
-            VS Code, HTML, CSS, JavaScript, TailwindCSS, ChatGPT, Git, GitHub Pages
-        </p>
+            JavaScript (ES6+), HTML5, CSS3, Node.js, Express, JSON knowledge base (RAG-lite), REST API, NGINX, Cloudflare (DNS/SSL), VS Code, Browser DevTools
+
 <div class="gallery">
-    <img src="ChatGPT(Naomi).png" title="ChatGPT(Naomi)" alt="ChatGPT(Naomi)" />
-    <img src="VS Code.png" title="VS Code" alt="VS Code" />
-    <img src="Portfolio.png" title="Portfolio" alt="Portfolio" />
+    <img src="Chat-Bot.png" title="Desktop Homepage" alt="Desktop Homepage" />
+    <img src="Database.png" title="Mobile View" alt="Mobile View" />
+    <img src="Web-Chat.png" title="Nginx Configuration" alt="Nginx Config" />
 </div>
 <h2>Project Overview</h2>
-    <div class="main">Built a professional portfolio website from scratch using VS Code, combining classic web development techniques with real-time AI collaboration. The project showcases technical capabilities, personal branding, and modern development workflow integration.
+    <div class="main">
+        A full-stack chat assistant with a browser UI and a Node/Express backend that routes intents, serves curated answers from a JSON knowledge base, and enforces guardrails.
 <br /><br />
  Key Highlights:
 <ul>
-    <li>Ideation: Leveraged ChatGPT for brainstorming, content drafting, and iterative feedback on design and structure.</li>
-
-    <li>Code-Centric Development: Used VS Code as the primary development environment for efficient code editing, previewing, and Git integration.</li>
-
-    <li>Responsive & Accessible: Implemented TailwindCSS for rapid styling and mobile-first design principles to ensure a seamless experience across devices.</li>
-
-    <li>Version Controlled: Maintained with Git and GitHub, allowing for continuous updates, iteration tracking, and collaboration.</li>
-
-    <li>Privacy-Aware Thinking: Planned for ethical analytics tools like Plausible while staying budget-conscious.</li>
+    <li>Designed the chat UI and message loop (send/receive, loading states, error handling).</li>
+    <li>Configured Ubuntu Server with Nginx to host the site on a self-managed homelab environment.</li>
+    <li>Implemented intent routing (hours, services, booking info) with a small JSON KB + fallback responses.</li>
+    <li>Added guardrails (no auto-calls, no commitments) and simple rate limiting.</li>
+    <li>Deployed behind NGINX with HTTPS via Cloudflare; logs for monitoring and debugging.</li>
+    <li>Integrated cleanly on the site with a lightweight embed and responsive styling.</li>
 </ul>
 <br /><br />
 Outcome:
 <ul>
-    <li>A sleek, professional website that not only demonstrates front-end skills and AI-assisted workflows, but serves as a living document of ongoing personal and professional growth.</li>
+    <li>Instant, consistent answers to FAQs that reduced repetitive inquiries while keeping control on our server.</li>
 </ul>
     </div>
     <button class="back-button" onClick="location.href='index.html'">← Back</button>
     <footer>
-        © 2025 Kevin Holt. Built with Curiosity and my AI friend Naomi.
+        © 2025 Kevin Holt. Built with curiosity, care, and coffee.
     </footer>
     <script>
-    // Immediately apply the stored theme on page load
     (function() {
       const storedTheme = localStorage.getItem('theme');
       if (storedTheme === 'dark') {
         document.body.classList.add('dark');
         document.body.classList.remove('light');
       } else {
-        // default to light if no theme or any other value
         document.body.classList.add('light');
         document.body.classList.remove('dark');
       }
@@ -307,4 +303,3 @@ Outcome:
   </script>
 </body>
 </html>
-
